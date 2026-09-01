@@ -1,0 +1,33 @@
+# Python / Environment
+.venv/
+venv/
+.env
+*.env
+
+# Python cache / bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+*.egg
+
+# Streamlit
+.streamlit/
+
+# Data (large files)
+backend/data/vector_store/
+backend/data/documents/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Docker
+.docker/
