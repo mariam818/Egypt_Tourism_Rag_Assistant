@@ -6,18 +6,14 @@ from fastapi import APIRouter, HTTPException, Request
 from app.schemas.query import QueryRequest, QueryResponse
 
 
-# ============================================================
 # Router
-# ============================================================
 
 router = APIRouter()
 
 logger = logging.getLogger(__name__)
 
 
-# ============================================================
 # Health Check
-# ============================================================
 
 @router.get("/health")
 async def health_check(request: Request):
@@ -55,9 +51,7 @@ async def health_check(request: Request):
     }
 
 
-# ============================================================
 # RAG Query Endpoint
-# ============================================================
 
 @router.post(
     "/query",
@@ -132,9 +126,7 @@ async def query_rag(
 
     try:
 
-        # ====================================================
         # STEP 1 — RETRIEVAL
-        # ====================================================
 
         logger.info(
             "Retrieving context for question: %s",
@@ -166,9 +158,7 @@ async def query_rag(
         )
 
 
-        # ====================================================
         # STEP 2 — GENERATION
-        # ====================================================
 
         logger.info(
             "Generating answer using Ollama..."
@@ -182,9 +172,7 @@ async def query_rag(
         )
 
 
-        # ====================================================
         # STEP 3 — BUILD SOURCES
-        # ====================================================
 
         sources = []
 
@@ -217,9 +205,7 @@ async def query_rag(
             )
 
 
-        # ====================================================
         # STEP 4 — RETURN RESPONSE
-        # ====================================================
 
         return QueryResponse(
 

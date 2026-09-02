@@ -4,9 +4,7 @@ import requests
 from dotenv import load_dotenv
 
 
-# ============================================================
 # Load environment variables
-# ============================================================
 
 load_dotenv()
 
@@ -16,9 +14,7 @@ DEFAULT_API_BASE_URL = os.getenv(
 )
 
 
-# ============================================================
 # Health check
-# ============================================================
 
 def check_backend_health(api_url=None):
 
@@ -42,9 +38,7 @@ def check_backend_health(api_url=None):
         )
 
 
-# ============================================================
 # Send question to RAG backend
-# ============================================================
 
 def ask_question(question: str, api_url=None):
 

@@ -1,0 +1,27 @@
+{
+    "project": "Egypt Tourism RAG Assistant",
+    "domain": "Egypt Tourism",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "vector_database": "ChromaDB",
+    "collection_name": "egypt_tourism",
+    "chunking": {
+        "strategy": "fixed_size_word_chunks",
+        "chunk_size_words": 900,
+        "chunk_overlap_words": 150
+    },
+    "retrieval": {
+        "top_k": 5
+    },
+    "llm": {
+        "provider": "Ollama",
+        "model": "llama3.2",
+        "temperature": 0.1
+    },
+    "source_format": "PDF",
+    "citation_metadata": [
+        "chunk_id",
+        "source",
+        "page",
+        "chunk_index"
+    ]
+}

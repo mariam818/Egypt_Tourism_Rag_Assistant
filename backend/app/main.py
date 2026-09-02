@@ -10,16 +10,12 @@ from app.services.generation import GenerationService
 from app.utils.logging_config import setup_logging
 
 
-# ============================================================
 # Logging
-# ============================================================
 
 logger = setup_logging()
 
 
-# ============================================================
 # Application lifespan
-# ============================================================
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -122,9 +118,7 @@ async def lifespan(app: FastAPI):
         )
 
 
-# ============================================================
 # FastAPI application
-# ============================================================
 
 app = FastAPI(
 
@@ -145,9 +139,7 @@ app.include_router(
     query_router
 )
 
-# ============================================================
 # CORS
-# ============================================================
 
 app.add_middleware(
 
@@ -165,9 +157,7 @@ app.add_middleware(
 )
 
 
-# ============================================================
 # Root endpoint
-# ============================================================
 
 @app.get("/")
 async def root():

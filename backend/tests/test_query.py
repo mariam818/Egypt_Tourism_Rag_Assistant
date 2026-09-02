@@ -5,9 +5,7 @@ from fastapi.testclient import TestClient
 from app.main import app
 
 
-# ============================================================
 # Test FastAPI endpoints
-# ============================================================
 
 @pytest.fixture
 def client():
@@ -18,9 +16,7 @@ def client():
         yield test_client
 
 
-# ============================================================
 # Test 1 — Health endpoint
-# ============================================================
 
 def test_health(client):
 
@@ -37,9 +33,7 @@ def test_health(client):
     assert data["generation"] == "ready"
 
 
-# ============================================================
 # Test 2 — Invalid empty question
-# ============================================================
 
 def test_query_empty_question(client):
 
@@ -53,9 +47,7 @@ def test_query_empty_question(client):
     assert response.status_code == 422
 
 
-# ============================================================
 # Test 3 — Missing question field
-# ============================================================
 
 def test_query_missing_question(client):
 
@@ -67,9 +59,7 @@ def test_query_missing_question(client):
     assert response.status_code == 422
 
 
-# ============================================================
 # Test 4 — Valid RAG query
-# ============================================================
 
 def test_query_valid_question(client):
 
